@@ -1,29 +1,20 @@
-let http = require('http');
+const http = require('node:http');
 let fs = require('fs');
 
-let handleRequest = (request, response) => {
-    response.writeHead(200, {
-        'Content-Type': 'text/html'
-    });
-    fs.readFile('./index.html', null, function (error, data) {
-        if (error) {
-            response.writeHead(404);
-            respone.write('Whoops! File not found!');
-        } else {
-            response.write(data);
-        }
-        response.end();
-    });
-};
+const hostname = '127.0.0.1';
+const port = 3000;
 
-http.createServer(handleRequest).listen(8000); 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+fs.readFile('index.html', 'utf8', function(err, data) {
+
+    const server = http.createServer((req, res) => {
+        res.statusCode = 200;
+        res.writeHead(200, {'Content-Type': 'text/html'});     
+        res.write(data)
+        res.end();
+    });
+
+    server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+    });
+
+});
