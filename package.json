@@ -1,8 +1,19 @@
 {
-  "name": "DoctorBN",
-  "description": "redirects to RUBIN",
+  "name": "doctorbn",
   "version": "1.0.0",
-  "engines": {
-    "node": "18.x"
-  }
+  "description": "redirects to RUBIN",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akleinau/DoctorBN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akleinau/DoctorBN/issues"
+  },
+  "homepage": "https://github.com/akleinau/DoctorBN#readme"
 }
