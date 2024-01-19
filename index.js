@@ -6,10 +6,10 @@ fs.readFile('index.html', 'utf8', function(err, data) {
     const server = http.createServer((req, res) => {
         const url = req.url;
 
-        if (url === "/rubin.herokuapp.com") {
+        if (url === "/akleinau.github.io/RUBIN/") {
             // do a 302 redirect
             res.writeHead(302, {
-              location: "https://rubin.herokuapp.com",
+              location: "https://akleinau.github.io/RUBIN/",
             });
             res.end();
           }
